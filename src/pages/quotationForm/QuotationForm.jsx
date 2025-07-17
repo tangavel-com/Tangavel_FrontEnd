@@ -50,7 +50,7 @@ function QuotationForm() {
 
                         {productSection.map((val)=>(
                             <div key={val} className="grid sm:grid-cols-3 gap-x-[100px] gap-y-[20px]">
-                                <p className="sm:col-span-3">Product {val}</p>
+                                <p className="sm:col-span-3">Product {val}: {formValues[`ProductName_${val}`]}</p>
                                 <input 
                                     name={`ProductName_${val}`}
                                     type="text"
@@ -85,7 +85,7 @@ function QuotationForm() {
                     </div>
 
                 </div>
-                <div className="grid sm:grid-cols-3 gap-x-[100px] gap-y-[20px]">
+                <div className="mt-[20px] grid sm:grid-cols-3 gap-x-[100px] gap-y-[20px]">
                     <button onClick={handleGetQuotation} className="sm:ml-auto sm:max-w-[150px] sm:col-start-3 bg-[#F8AA03] rounded-[10px] min-h-[50px] px-[10px] hover:scale-102">Get quotation</button>
                 </div>
 

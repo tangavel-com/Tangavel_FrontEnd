@@ -7,10 +7,12 @@ import Products from "../pages/products/Products.jsx";
 import TrackOrder from "../pages/trackOrder/TrackOrder.jsx";
 import ContactUs from "../pages/contactUs/ContactUs.jsx";
 import AddProduct from "../pages/addProduct/AddProduct.jsx";
+import ScrollToTop from "../components/scrollToTop/ScrollToTop.js";
 
 function AppRouter(){
     return(
         <BrowserRouter>
+            <ScrollToTop/>
             <Routes>
                 <Route path="/" element={<Layout/>} >
                     <Route index element={<Home/>}/>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Home(){
     return(
         <div className="grid gap-[50px]">
@@ -14,8 +16,8 @@ function Home(){
                         shipment.
                     </p>
                     <div className="grid gap-y-[10px] sm:flex gap-[50px]">
-                        <a className="border-none rounded-[10px] px-[15px] py-[15px] bg-[#F8AA03] hover:cursor-pointer hover:scale-102" href="/quotationform"> Get price details </a>
-                        <a className="border rounded-[10px] px-[15px] py-[15px] bg-[#000] text-[#fff] hover:cursor-pointer hover:scale-102" href="#"> List of products </a>
+                        <Link className="border-none rounded-[10px] px-[15px] py-[15px] bg-[#F8AA03] hover:cursor-pointer hover:scale-102" to="/quotationform"> Get price details </Link>
+                        <Link className="border rounded-[10px] px-[15px] py-[15px] bg-[#000] text-[#fff] hover:cursor-pointer hover:scale-102" to="/products"> List of products </Link>
                     </div>
                 </div>
                 <div>
@@ -66,7 +68,7 @@ function Home(){
                         </div>
                     </div>
                     <div>
-                        <button className="w-full border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102">List of products</button>
+                        <Link to="/products/#" className="block border rounded-[10px] p-[15px] text-center hover:cursor-pointer hover:scale-102">List of products</Link>
                     </div>
                 </div>
             </div>
@@ -91,7 +93,7 @@ function Home(){
                         <li>Receive quotation.</li>
                     </ul>
                     <div className="flex justify-center">
-                        <a className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center" href="/quotationform">Get quotation</a>
+                        <Link className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center" to="/quotationform">Get quotation</Link>
                     </div>
                 </div>
                 <div className="border rounded-[10px] p-[20px] grid gap-[20px]">
@@ -106,7 +108,7 @@ function Home(){
                         <li>Confirm Payment terms and INCO terms.</li>
                     </ul>
                     <div className="flex justify-center">
-                        <a className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center" href="/trackorder">Track order</a>
+                        <Link className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center" to="/trackorder">Track order</Link>
                     </div>
                 </div>
                 <div className="border rounded-[10px] p-[20px] grid gap-[20px]">
@@ -121,7 +123,7 @@ function Home(){
                         <li>Receive products.</li>
                     </ul>
                     <div className="flex justify-center">
-                        <a className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center" href="/trackorder">Delivery status</a>
+                        <Link className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center" to="/trackorder">Delivery status</Link>
                     </div>
                 </div>
             </div>

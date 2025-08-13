@@ -4,17 +4,18 @@ function Footer(){
     return(
         <div className="bg-[#000] text-[#fff] rounded-[10px] p-[20px] flex justify-between">
             <div className="grid gap-[20px]">
-                <Link to="/">
-                <div className="flex items-center gap-[10px]">                
+                
+                <div className="flex items-center gap-[10px]">    
+                    <Link to="/" className="flex items-center gap-[10px]">            
                     <div className="max-w-[50px]">
                         <img src="/Logo_white.png" alt="Logo" />
                     </div>
                     <h3 className="text-2xl">Tangavel</h3>
+                    </Link>
                 </div>
-                </Link>
                 <div className="flex flex-col gap-[10px]">
                     <p>Email: contact.tangavel@gmail.com</p>
-                    <p>Location: The Executive Zone-Thousand Lights, Chennai, Tamil Nadu, 600002.</p>
+                    <p>Location: Tangavel, No 44, Kolathur Main Rd, Vetrivelan Nagar, Muthamizh Nagar, Kolathur, Chennai, Tamil Nadu 600099</p>
                 </div>
             </div>
             <div className="flex gap-[50px]">

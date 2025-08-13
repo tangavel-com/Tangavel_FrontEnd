@@ -1,7 +1,7 @@
 function ProductCard({product}) {
     return(
         <div>
-            <div className="bg-[#000] text-[#fff] rounded-[10px] p-[20px] grid sm:grid-cols-2 gap-[20px]">
+            <div className="bg-[#000] text-[#fff] rounded-[10px] p-[20px] grid sm:grid-cols-2 gap-[20px] min-h-full">
                 <div className="grid gap-[20px]">
                     <h3>{product.title}</h3>
                     <div className="max-w-[200px]">

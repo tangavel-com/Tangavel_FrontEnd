@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sendQuotationRequestDetails } from "../../api/quotationForm.js";
 
 function QuotationForm() {
 
@@ -6,30 +7,55 @@ function QuotationForm() {
 
     let [formValues, setFormValues] = useState({});
 
-    function handleChange(e){
+
+    let [buyerDetails,setBuyerDetails] = useState({});
+
+    let [productDetails,setProductDetails] = useState([
+        {
+            ProductName:"",
+            ProductDescription:"",
+            ProductQuantity:""
+        }
+    ]);
+
+    function handleBuyerDetailsChange(e) {
         e.preventDefault();
-        setFormValues((prev)=>({
-            ...prev,
+        setBuyerDetails({
+            ...buyerDetails,
             [e.target.name]: e.target.value
         })
-        );
     }
 
-    function addProduct(e) {
+    function handleAddProduct(e){
         e.preventDefault();
-        setProductSection([...productSection,productSection.length+1]);
+        setProductDetails([
+            ...productDetails,
+            {
+                ProductName:"",
+                ProductDescription:"",
+                ProductQuantity:""
+            }
+        ])
+    }
+
+    function handleProductDetailsChange(e,index) {
+        
+        let updatedProductDetails = [...productDetails]
+        updatedProductDetails[index][e.target.name] = e.target.value
+        setProductDetails(updatedProductDetails);
+
     }
 
     function handleGetQuotation(e){
         e.preventDefault();
-        console.log(formValues);
+        console.log({buyerDetails,productDetails})
+        sendQuotationRequestDetails({buyerDetails,productDetails})
     }
 
     return(
         <div>
             
-            <h1 className="text-4xl">Request for quotation</h1>
-            
+            <h1 className="text-4xl text-center sm:text-left">Request for quotation</h1>
 
             <form action="">
 
@@ -38,42 +64,42 @@ function QuotationForm() {
 
                     <div className="grid sm:grid-cols-3 gap-x-[100px] gap-y-[20px]">
                         <p className="sm:col-span-3">Buyer details:</p>
-                        <input name="FullName" onChange={handleChange} value={formValues.FullName || ""} type="text" placeholder="Full Name" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
-                        <input name="Email" onChange={handleChange} value={formValues.Email || ""} type="text" placeholder="Email Id" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
-                        <input name="Mobile" onChange={handleChange} value={formValues.Mobile || ""} type="text" placeholder="Mobile number" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
-                        <input name="Destination" onChange={handleChange} value={formValues.Destination || ""} type="text" placeholder="Destination port/airport/city name" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
-                        <input name="StatePincode" onChange={handleChange} value={formValues.StatePincode || ""} type="text" placeholder="State / Province name and pincode" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
-                        <input name="Country" onChange={handleChange} value={formValues.Country || ""} type="text" placeholder="Country" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
+                        <input name="fullName" onChange={handleBuyerDetailsChange} value={buyerDetails.fullName || ""} type="text" placeholder="Full Name" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
+                        <input name="emailId" onChange={handleBuyerDetailsChange} value={buyerDetails.emailId || ""} type="text" placeholder="Email Id" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
+                        <input name="mobileNumber" onChange={handleBuyerDetailsChange} value={buyerDetails.mobileNumber || ""} type="text" placeholder="Mobile number" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
+                        <input name="Destination" onChange={handleBuyerDetailsChange} value={buyerDetails.Destination || ""} type="text" placeholder="Destination port/airport/city name" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
+                        <input name="StatePincode" onChange={handleBuyerDetailsChange} value={buyerDetails.StatePincode || ""} type="text" placeholder="State / Province name and pincode" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
+                        <input name="Country" onChange={handleBuyerDetailsChange} value={buyerDetails.Country || ""} type="text" placeholder="Country" className="border rounded-[10px] min-h-[50px] px-[10px]"/>
                     </div>
                     <div className="grid gap-y-[20px]">
                         <p>Product details:</p>
 
-                        {productSection.map((val)=>(
-                            <div key={val} className="grid sm:grid-cols-3 gap-x-[100px] gap-y-[20px]">
-                                <p className="sm:col-span-3">Product {val}: {formValues[`ProductName_${val}`]}</p>
+                        {productDetails.map((val,index)=>(
+                            <div key={index} className="grid sm:grid-cols-3 gap-x-[100px] gap-y-[20px]">
+                                <p className="sm:col-span-3">Product {index+1} : {productDetails[index].ProductName}</p>
                                 <input 
-                                    name={`ProductName_${val}`}
+                                    name="ProductName"
                                     type="text"
                                     placeholder="Product name"
                                     className="border rounded-[10px] min-h-[50px] px-[10px]"
-                                    value={formValues[`ProductName_${val}`]||""}
-                                    onChange={handleChange}
+                                    value={productDetails[index].ProductName||""}
+                                    onChange={(e)=>handleProductDetailsChange(e,index)}
                                 />
                                 <input 
-                                    name={`ProductDescription_${val}`} 
+                                    name={`ProductDescription`} 
                                     type="text" 
                                     placeholder="Description / Variety / HSCode" 
                                     className="border rounded-[10px] min-h-[50px] px-[10px]" 
-                                    value={formValues[`ProductDescription_${val}`] ||""} 
-                                    onChange={handleChange}
+                                    value={productDetails[index].ProductDescription ||""} 
+                                    onChange={(e)=>handleProductDetailsChange(e,index)}
                                 />
                                 <input 
-                                    name={`ProductQuantity_${val}`} 
+                                    name={`ProductQuantity`} 
                                     type="text" 
                                     placeholder="Quantity and packing details" 
                                     className="border rounded-[10px] min-h-[50px] px-[10px]"
-                                    value={formValues[`ProductQuantity_${val}`]||""}
-                                    onChange={handleChange}
+                                    value={productDetails[index].ProductQuantity||""}
+                                    onChange={(e)=>handleProductDetailsChange(e,index)}
                                 />
 
                             </div>
@@ -81,7 +107,7 @@ function QuotationForm() {
 
                     </div>
                     <div className="grid sm:grid-cols-3 gap-x-[100px] gap-y-[20px]">
-                        <button onClick={addProduct} className="sm:col-start-2 text-[#d9d9d9] border border-[#d9d9d9] rounded-[10px] min-h-[50px] px-[10px] hover:text-[#000] hover:border-[#000] hover:font-medium">Add product</button>
+                        <button onClick={handleAddProduct} className="sm:col-start-2 text-[#d9d9d9] border border-[#d9d9d9] rounded-[10px] min-h-[50px] px-[10px] hover:text-[#000] hover:border-[#000] hover:font-medium">Add product</button>
                     </div>
 
                 </div>

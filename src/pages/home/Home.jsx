@@ -35,8 +35,8 @@ function Home(){
             </div>
 
             <div className="sm:flex gap-[50px]">
-                <div className="hidden sm:block max-w-[400px]">
-                    <img className="rounded-[10px]" src="/images/Comodity_export.png" alt="Multi product photo." />
+                <div className="hidden xl:block max-w-[400px]">
+                    <img className="rounded-[10px]" src="/images/Comodity_export.png" alt="Multi products on display and container ship loading photo." />
                 </div>
                 <div className="px-[50px] py-[20px] bg-[#000] text-[#fff] w-full border border-[#fff] rounded-[10px] flex flex-col gap-[20px]">
                     <h1 className="text-4xl">Commodity Export</h1>

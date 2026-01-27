@@ -9,6 +9,8 @@ function ProductCard({ product }) {
               className="border rounded-[10px]"
               src={product.image}
               alt={product.imageAltText}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <p className="text-sm">{product.note}</p>

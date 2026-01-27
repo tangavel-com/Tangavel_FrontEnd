@@ -37,6 +37,9 @@ function Home() {
               className="ml-auto rounded-[10px]"
               src="/images/Spice_map_of_the_world.jpg"
               alt="World map layout made out of spice."
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
         </div>
@@ -60,6 +63,8 @@ function Home() {
             className="w-full rounded-[10px]"
             src="/images/Comodity_export.jpg"
             alt="Multi products on display and container ship loading photo."
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="px-[50px] py-[20px] bg-[#000] text-[#fff] w-full border border-[#fff] rounded-[10px] flex flex-col gap-[20px]">
@@ -93,6 +98,8 @@ function Home() {
                 className="sm:max-w-[300px] rounded-[10px] border border-[#fff]"
                 src="/images/HandCraftsOnTable.jpg"
                 alt="Handcraft items on a table."
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -122,7 +129,13 @@ function Home() {
         <div className="border rounded-[10px] p-[20px] grid gap-[20px]">
           <h2 className="text-2xl">Get quotation</h2>
           <div className="flex justify-center">
-            <img className="rounded-[10px]" src="/images/Costing.jpg" alt="" />
+            <img
+              className="rounded-[10px]"
+              src="/images/Costing.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <ul className="grid gap-[10px]">
             <li>Fill requirement form.</li>
@@ -144,6 +157,8 @@ function Home() {
               className="rounded-[10px]"
               src="/images/Handshake.jpg"
               alt=""
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <ul className="grid gap-[10px]">
@@ -162,7 +177,13 @@ function Home() {
         <div className="border rounded-[10px] p-[20px] grid gap-[20px]">
           <h2 className="text-2xl">Product delivery</h2>
           <div className="flex justify-center">
-            <img className="rounded-[10px]" src="/images/Delivery.jpg" alt="" />
+            <img
+              className="rounded-[10px]"
+              src="/images/Delivery.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <ul className="grid gap-[10px]">
             <li>Get clearence documents.</li>

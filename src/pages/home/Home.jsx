@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -17,17 +17,17 @@ function Home() {
           <div className="grid gap-y-[10px] sm:flex gap-[50px]">
             <Link
               className="border-none rounded-[10px] px-[15px] py-[15px] bg-[#F8AA03] hover:cursor-pointer hover:scale-102"
-              to="/quotationform"
+              to="/contactus"
             >
-              {" "}
-              Get price details{" "}
+              {' '}
+              Contact us{' '}
             </Link>
             <Link
               className="border rounded-[10px] px-[15px] py-[15px] bg-[#000] text-[#fff] hover:cursor-pointer hover:scale-102"
               to="/products"
             >
-              {" "}
-              List of products{" "}
+              {' '}
+              List of products{' '}
             </Link>
           </div>
         </div>
@@ -142,12 +142,12 @@ function Home() {
             <li>Receive quotation.</li>
           </ul>
           <div className="flex justify-center">
-            <Link
+            {/* <Link
               className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center"
               to="/quotationform"
             >
               Get quotation
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="border rounded-[10px] p-[20px] grid gap-[20px]">
@@ -166,12 +166,12 @@ function Home() {
             <li>Confirm Payment terms and INCO terms.</li>
           </ul>
           <div className="flex justify-center">
-            <Link
+            {/* <Link
               className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center"
               to="/trackorder"
             >
               Track order
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="border rounded-[10px] p-[20px] grid gap-[20px]">
@@ -190,17 +190,17 @@ function Home() {
             <li>Receive products.</li>
           </ul>
           <div className="flex justify-center">
-            <Link
+            {/* <Link
               className="xl:min-w-[150px] max-w-[150px] border rounded-[10px] p-[15px] hover:cursor-pointer hover:scale-102 text-center"
               to="/trackorder"
             >
               Delivery status
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

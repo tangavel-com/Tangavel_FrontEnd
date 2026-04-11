@@ -15,7 +15,7 @@ function Footer() {
         <div className="flex flex-col gap-[10px]">
           <p>Email: contact.tangavel@gmail.com</p>
           {/* <p>Location: Tangavel, No 44, Kolathur Main Rd, Vetrivelan Nagar, Muthamizh Nagar, Kolathur, Chennai, Tamil Nadu 600099</p> */}
-          <p>Location: Matharasan pattinam, Tamil Nadu</p>
+          <p>Location: Tamil Nadu, India</p>
         </div>
       </div>
       <div className="flex gap-[50px]">
@@ -23,9 +23,7 @@ function Footer() {
           <li>
             <Link to="/products">Products</Link>
           </li>
-          <li>
-            <Link to="/trackorder">Track order</Link>
-          </li>
+          <li>{/* <Link to="/trackorder">Track order</Link> */}</li>
         </ul>
         <ul className="flex flex-col gap-[10px]">
           <li>

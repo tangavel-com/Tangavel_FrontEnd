@@ -54,9 +54,9 @@ function Header() {
                         <Link onClick={handleMenu} to="/contactus">Contact us</Link>
                     </li> */}
           <li>
-            <Link onClick={handleMenu} to="/quotationform">
+            <Link onClick={handleMenu} to="/contactus">
               <button className="min-w-[100px] border-none rounded-[10px] py-[15px] px-[15px] bg-[#F8AA03] hover:cursor-pointer hover:scale-102">
-                Get quotation
+                Contact
               </button>
             </Link>
           </li>

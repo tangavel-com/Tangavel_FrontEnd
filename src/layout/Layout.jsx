@@ -11,7 +11,8 @@ function Layout() {
       <div className="col-span-10 col-start-2 min-h-[55dvh] my-[50px] ">
         <Outlet />
       </div>
-      <div className="hidden sm:block col-span-10 col-start-2">
+      {/* <div className="hidden sm:block col-span-10 col-start-2"> */}
+      <div className="col-span-10 col-start-2">
         <Footer />
       </div>
     </div>

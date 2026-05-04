@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className="bg-[#000] text-[#fff] rounded-[10px] p-[20px] flex justify-between">
+    <div className="bg-[#000] text-[#fff] rounded-[10px] p-[20px] sm:flex justify-between">
       <div className="grid gap-[20px]">
         <div className="flex items-center gap-[10px]">
           <Link to="/" className="flex items-center gap-[10px]">
@@ -18,7 +18,7 @@ function Footer() {
           <p>Location: Chennai, Tamil Nadu, India</p>
         </div>
       </div>
-      <div className="flex gap-[50px]">
+      <div className="grid gap-[10px] sm:flex sm:gap-[50px]">
         <ul className="flex flex-col gap-[10px]">
           <li>{/* <Link to="/products">Products</Link> */}</li>
           <li>{/* <Link to="/trackorder">Track order</Link> */}</li>

@@ -15,14 +15,12 @@ function Footer() {
         <div className="flex flex-col gap-[10px]">
           <p>Email: contact.tangavel@gmail.com</p>
           {/* <p>Location: Tangavel, No 44, Kolathur Main Rd, Vetrivelan Nagar, Muthamizh Nagar, Kolathur, Chennai, Tamil Nadu 600099</p> */}
-          <p>Location: Tamil Nadu, India</p>
+          <p>Location: Chennai, Tamil Nadu, India</p>
         </div>
       </div>
       <div className="flex gap-[50px]">
         <ul className="flex flex-col gap-[10px]">
-          <li>
-            <Link to="/products">Products</Link>
-          </li>
+          <li>{/* <Link to="/products">Products</Link> */}</li>
           <li>{/* <Link to="/trackorder">Track order</Link> */}</li>
         </ul>
         <ul className="flex flex-col gap-[10px]">
@@ -34,6 +32,9 @@ function Footer() {
           </li>
         </ul>
         <ul className="flex flex-col gap-[10px]">
+          <li>
+            <Link to="/products">Products</Link>
+          </li>
           <li>
             <Link to="/contactus">Contact us</Link>
           </li>

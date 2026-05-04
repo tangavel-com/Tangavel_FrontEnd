@@ -47,7 +47,7 @@ function Home() {
 
       {/* SECTION 2. We do. */}
 
-      <div className="flex gap-[20px] items-center">
+      {/* <div className="flex gap-[20px] items-center">
         <img
           className="max-w-[100px] "
           src="/icons/Container_icon.png"
@@ -112,7 +112,7 @@ function Home() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* SECTION 3. Route map */}
 
